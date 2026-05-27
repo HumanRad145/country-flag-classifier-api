@@ -9,7 +9,7 @@ import torchvision.io as io
 from torchvision.transforms import v2
 from PIL import Image
 
-from flags import FLAG_CNN, DEVICE, INPUT_HEIGHT, INPUT_WIDTH
+from model import FLAG_CNN, DEVICE, INPUT_HEIGHT, INPUT_WIDTH
 from flag_mapping import flag_map
 
 from pathlib import Path

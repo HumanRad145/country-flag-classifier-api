@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;           /* Takes up full screen height */
+    display: flex;
+    flex-direction: column;      /* Stacks elements vertically */
+    justify-content: center;     /* Centers content vertically */
+    align-items: center;         /* Centers content horizontally */
+    background-color: #f4f4f9;   /* Light background color (optional) */
+    font-family: sans-serif;
+}
+
+form {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    display: flex;
+    flex-direction: column;      /* Stacks label, input, and button */
+    align-items: center;         /* Centers elements inside the form */
+    width: 100%;
+    max-width: 350px;            /* Prevents form from getting too wide */
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

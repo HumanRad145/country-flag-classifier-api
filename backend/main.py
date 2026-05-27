@@ -28,6 +28,9 @@ app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=True, 
 
 BASE_DIR = Path(__file__).resolve().parent
 model_path = BASE_DIR / 'flag_model_4conv.pth'
+model = FLAG_CNN().to(DEVICE)
+model.load_state_dict(torch.load(model_path, map_location=DEVICE)['model_state_dict'])
+model.eval()
 
 async def predict_image(file: UploadFile = File(...)):
     contents = await file.read()
@@ -48,10 +51,6 @@ async def predict_image(file: UploadFile = File(...)):
 async def use_model_for_prediction(file: UploadFile = File(...)):
 
     image_tensor = await predict_image(file)
-
-    model = FLAG_CNN().to(DEVICE)
-    model.load_state_dict(torch.load(model_path, map_location=DEVICE)['model_state_dict'])
-    model.eval()
 
     with torch.no_grad():
         image_tensor = image_tensor.to(DEVICE)
